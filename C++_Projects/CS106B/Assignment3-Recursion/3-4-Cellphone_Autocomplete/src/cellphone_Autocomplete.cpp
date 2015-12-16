@@ -1,73 +1,102 @@
-/*Assignment 3, problem 4:  Cell phone mind reading.
- *Write the function ListCompletions that prints all words from the lexicon that can be formed
- *by extending the given digit sequence.
+/*
+ * File: ListCompletions.cpp
+ * -------------------------
+ * Name: Joe Hurt 12/14/15
+ * Section: [TODO: enter section leader here] 
+ * This file is the starter project for the cell phone mind-reading problem
+ * from Assignment #3
+ * [TODO: extend the documentation]
  */
 
-#include <cctype>
 #include <iostream>
-#include <string>
+#include "console.h"
+#include "simpio.h"
+#include "lexicon.h"
 using namespace std;
 
-#include "simpio.h"
-#include "gwindow.h"
-#include "lexicon.h"  //used to verify words
+const string ALPHA="abcdefghijklmnopqrstuvwxyz";
 
-void ListCompletions(string digits,Lexicon &lex);
-void ListCompRec(string prefix,string digits,Lexicon &lex);
-string DigitLetters(char ch);
+/* Function prototypes */
+void listCompletions(string digits, Lexicon &lex);
+string listCompletionsRec(string prefix,string digits, Lexicon &lex);
+string getString(char digit);
 
-int main(){
-  Lexicon lex("EnglishWords.dat"); //initialize english lexicon object, which validates words
-  string digits;
-  cout<<"This program will take a digit sequence input and generate a list of possible valid word completions by mapping the digits to a valid word prefix. "<<endl;
-  cout<<"Enter digits (no spaces) to see the list of valid words formed by that digit prefix: ";
-  cin>>digits;
-  ListCompletions(digits, lex);
-  return 0;
+
+/* Main program */
+
+int main() {
+   Lexicon english("EnglishWords.dat");
+   cout << "Cell phone mind-reading problem" << endl;
+   while (true) {
+      cout << "Enter a set of digits: ";
+      string digits = getLine();
+      if (digits == "" || digits == "quit") break;
+      cout << "The words beginning with those digits are:" << endl;
+      listCompletions(digits, english);
+   }
+   return 0;
 }
-/*wrapper function */
-void ListCompletions(string digits,Lexicon &lex){
-  ListCompRec("",digits,lex);
-  return;
-}
 
-/*recursive function that generates set of completions for given string input */
-void ListCompRec(string prefix,string digits,Lexicon &lex){
-  /*base case*/
-  if (digits.length()==0){
-    if (lex.contains(prefix))
-      cout<<prefix<<" ";
+/*
+ * Function: listCompletions
+ * Usage: listCompletions(digits, lexicon);
+ * ----------------------------------------
+ * Lists all the words in the lexicon that begin with the letters
+ * corresponding to the specified digits on a telephone keypad.
+ */
+
+void listCompletions(string digits, Lexicon &lex){
+  cout<<listCompletionsRec("",digits,lex);  
+}
+/*recursive function that does all the real work*/
+string listCompletionsRec(string prefix,string digits, Lexicon &lex){
+  string result="";
+  if(digits!=""){  //this is part 1 of the recursion, where we reduce digit string to empty
+    if(!lex.containsPrefix(prefix))  //base case 
+      return result;  
+    else{  //recursive decomp for part 1, we continue building prefix using digits from string
+      string letters=getString(digits[0]);
+      for(int i=0;i<letters.length();i++)
+	result+=listCompletionsRec(prefix+letters[i],digits.substr(1),lex);
+      return result;
+    }
+  }
+  else{ //we now are in case where digits==""
+    if(!lex.containsPrefix(prefix))
+      return result;
     else{
-      string alpha="abcdefghijklmnopqrstuvwxyz";
-      for (int i=0;i<int(alpha.length());i++){  //build larger prefix out of alphabet
-	if(lex.containsPrefix(prefix+alpha[i]) )  
-	  ListCompRec(prefix+alpha[i],digits,lex);
-      }
+      if(lex.contains(prefix))
+	result+=prefix+"\n";//add word to result, but need to continue adding letters to get all words starting with this prefix
+      for(int i=0;i<ALPHA.length();i++)  //go deeper down path of finding more words with this prefix
+	result+=listCompletionsRec(prefix+ALPHA[i],digits,lex);
+      return result;
     }
-  }
-  /*digits remain to be processes */
-  else {
-    string letters=DigitLetters(digits[0]);
-    for (int i =0;i<int(letters.length());i++){
-      if(lex.containsPrefix(prefix+letters[i]))
-	 ListCompRec(prefix+letters[i],digits.substr(1),lex);
-    }
-  }
-  
+  } 
 }
 
-string DigitLetters(char ch){
-  switch(ch){
-  case '0': return ("0");
-  case '1': return ("1");
-  case '2': return ("abc");
-  case '3': return ("def");
-  case '4': return("ghi");
-  case '5': return("jkl");
-  case '6': return("mno");
-  case '7': return ("pqrs");
-  case '8': return ("tuv");
-  case '9': return ("wxyz");
-  default: return("");
+string getString(char digit){
+  switch(digit){
+  case '0':
+    return "0";
+  case '1':
+    return "1";
+  case '2':
+    return "abc";
+  case '3':
+    return "def";
+  case '4':
+    return "ghi";
+  case '5':
+    return "jkl";
+  case '6':
+    return "mno";
+  case '7':
+    return "pqrs";
+  case '8':
+    return "tuv";
+  case '9':
+    return "wxyz";
+  default:
+   return "?"; 
   }
 }
