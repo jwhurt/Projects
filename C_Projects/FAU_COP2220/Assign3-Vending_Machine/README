@@ -1,0 +1,24 @@
+Project Description
+This project was programming assignment 3 from Florida Atlantic University's COP2220, Introduction to Programming in C
+
+Files in this directory
+      filename		description
+      snacks.c		Source code for programming assignment
+      assignment3.txt	Description of programming assignment from professor
+
+Installation
+Copy the directory from github to your local machine
+
+Running from Terminal
+  1. Navigate to the project directory
+
+        bash-3.2$ cd <project directory name>     	      
+     	      
+  2. Compile the source file using gcc
+
+        bash-3.2$ gcc <filename>     	     	 		 	
+
+  3.  Execute the program
+
+         bash-3.2$ ./a.out
+

@@ -1,0 +1,74 @@
+Intro to Programming in C
+Programming Assignment 3				Due Wednesday, October 28th
+
+AAA Vending Company needs to create software for their new line of snack vending machines. Each machine will contain the following items 
+    P – Potato Chips	     $1.25
+    S - Snickers Bar	     $1.35
+    T – Pop Tart	     $0.95
+    C – Cookies		     $1.50
+    B – Brownie		     $1.75
+    N – Nuts		     $1.40
+ 
+•	You must have at least these 7 user defined functions:
+o	void Menu(char *selection); // Displays the list of snack items and prompts for the user’s choice 
+o	int CheckMoney(double *payment, double item_cost); //compares the amount the user has deposited to the price of item selected. It returns 1 if the amount is at least enough to cover the cost, 0 if there is not enough.
+o	void GetMoney(double *payment, double item_cost, char selection);  //calls CoinMenu function to collect money from the user and CheckMoney function to keep comparing the deposited amount to the item cost. 
+o	void GetChange(double *payment, double item_cost, double *change); //calculates the amount of change to be returned
+o	void CoinMenu(double *payment );  //displays menu of coins and gets user input of the coins deposited
+o	void Quit(char *again); //Asks the user if they want another snack.
+o	void GetCost(char selection, double *item_cost); //sets the cost of the purchase based on value in selection
+
+Additional Requirements:
+•	   Create a typed algorithm that outlines the steps your program will follow in English/pseudocode. This is worth 10 points of the grade for this assignment.
+•	   Use function prototypes.
+•	   Write comments for each function that will appear in the file before each prototype and again before each function definition.
+•	   Be sure to comment your code adequately.
+•	   Be sure to indent properly. Check your textbook examples to see how it should be done.
+•	   Use meaningful variable names.
+•	   Electronically submit only your source code, Snacks.c through the Assignment Manager in Blackboard.
+•	   Turn in an electronic copy of your source code by 9 am on Wednesday, October28th.
+•	   Turn in a hard copy of your source code, a sample output demonstrating your program, and a copy of your algorithm in class on Wednesday, October 28th.
+•	   Late Submission: No program will be accepted for grading after 8am on Monday, November 2nd. Late penalties apply.
+
+Sample output:
+
+Welcome to Vend-O-Matic 
+Please enter a selection :
+P – Potato Chips		$1.25
+S - Snickers Bar		$1.35
+T – Pop Tart 			$0.95
+C – Cookies			$1.50
+B – Brownie			$1.75
+N – Nuts			$1.40
+Please enter you snack selection:   C
+Please deposit your money by selection:
+      1 - $5.00
+      2 - $1.00
+      3 - $0.25
+      4 - $0.10
+      5 - $0.05
+Deposit amount: 3
+Price of item C: $1.50
+Current Balance $0.25
+Please deposit your money by selection:
+      1 - $5.00
+      2 - $1.00
+      3 - $0.25
+      4 - $0.10
+      5 - $0.05
+Deposit amount: 3
+Price of item C: $1.50
+Current Balance $0.50
+Please deposit your money by selection:
+      1 - $5.00
+      2 - $1.00
+      3 - $0.25
+      4 - $0.10
+      5 - $0.05
+Deposit amount: 1
+Price of item C: $1.50
+Current Balance $5.50
+Dispensing selection
+Dispensing Change $4.00
+Would you care to make another purchase (Y/N)? : N
+Thank you and enjoy your purchase!!
