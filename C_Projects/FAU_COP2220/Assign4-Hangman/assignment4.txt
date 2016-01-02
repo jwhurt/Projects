@@ -1,0 +1,66 @@
+FAU COP2220 Intro to Programming in C
+Assignment 4   Hangman
+
+Write an interactive program that will allow a user to play the game of Hangman. You will need to:
+
+•     Declare and use three character arrays: 
+      o     one for the “word to be guessed”
+      o     one for the “word in progress”  
+      o     one for all of the “guessed letters”
+
+•     Declare additional variables as needed
+
+Declare additional variables as needed	
+•	Preload the arrays 
+	o	“word to be guessed” array -  start with an empty string.
+•	Read a word from the file and store it in the word to be guessed array. All words in the file, words.txt, will be lowercase. y
+	o	“word in progress” array should be adjusted to the correct length (that is the same size as the word read from the file but consists only of * (asterisks) in the beginning)
+	o	 “guessed letters” array should be empty – a character is added with each guess 
+•	 total num guesses keeps track of how many characters are in the array
+
+HOW TO PLAY THE GAME
+
+•   Get a word from the file
+•   Allow the user to guess letters one character at a time.  
+•   At every stage of the game, the user should be able to view the current state of the “word in progress” and the list of “guessed letters”  
+•   If any letter is correctly guessed, the player is notified, and the letter appears in its proper location in the “word in progress” array.   
+•   If a letter is not correct, the number of used guesses is increased.  
+•   In ALL cases, the guessed letter should be added to the array for “guessed letters”.  
+•   Each time the user is asked for a letter, the array containing the “word in progress” is displayed. Only correct guesses in their proper location and * should be displayed, no garbage.  
+•   The list of “guessed letters” is also displayed each time the user is asked for a letter.  
+•   The user is allowed up to 6 incorrect guesses.   
+•   The game is over when the word is guessed correctly or the six incorrect guesses are used up. 
+•   If the player guesses the word correctly, the player is notified that they have; If the player does not get the correct word, the player is notified that they have lost. In either case, the correct word is displayed. 
+•   When the game is over, the user should be allowed to play again without having to execute the program again. ( The player will play again with the next word in the file) 
+
+Helpful Hints
+•	A word is guessed correctly when all of the characters in word to be guessed match the word in progress
+•	You do not have to be concerned with correct spelling, or if the input from the user belongs to the alphabet. Only letters from a to z and from A to Z will be used. 
+•	Remember that the C language is case sensitive. For this program a = = A. In order to do this you will need to convert all letters input by the user to lowercase either before or during the letter matching process.. You will need to have a preprocessor directive to include the library file ctype.h in order to access these functions.
+•	char tolower(char x) – takes the original letter and returns the lowercase equivalent  
+o	char toupper(char x) – takes the original letter and returns the uppercase equivalent
+•	Assume all words to be guessed will have single instances of each character – (i.e words like apple, hello, goodbye – will not be tested – use words like: word, today, period)  
+
+Other Requirements
+
+•     You must have meaningful variable and function names.  
+•     You must use consistent and proper indentation. 
+•     You must use sufficient comments that tell a programmer what is happening in the program 
+•     You must have at least 8 user-defined functions with meaningful names that perform the specified tasks:
+o     A function that determines if the player would like to play again. (PlayAgain)
+o     A function that determines if the second array matches the first array.  (ArrayMatch)
+o     A function that tells the user if they won or lost  (Message)
+o     A function that returns the index of the letter that the user has guessed or something else if the letter is not in the word.  (LocationFinder)
+o     A function that displays the instructions on how to play the game. (Instructions)
+o     A function that displays the contents of an array.  ArrayDisplay
+o     Two additional functions of your own choice.  GetGuess , Reset
+•     You must use function prototypes placed before the main function and all function definitions must follow the main function.
+•     All function prototypes and definitions must have a comment describing what the function does.
+
+What to turn in when:
+•     Outline of program code algorithm typed, not handwritten, on a separate document. 
+•     A hard copy of your source code.
+•     A hard copy of one “game” (Sample output).
+	      
+
+
