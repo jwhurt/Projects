@@ -1,0 +1,53 @@
+Intro to Programming in C
+Assignment 5  Due Wednesday, December 2nd
+Make Your Own Program
+
+Since this is the last assignment, there will be no late submission. All programs must be electronically submitted to Blackboard by 9am on Wednesday, December 2nd with NO EXCEPTIONS (not even 1 minute late) in order to receive a grade. The hard copy MUST also be turned in before 2 pmm on Wednesday, December 2nd.
+ No hard copy AND electronic submission = no grade!
+
+With this assignment you will start to learn how to write a practical menu driven program that manages a list of data. You will use an array of structs to organize the data and you will save the information in a text file. 
+
+The assignment is to write a menu driven program that manages a small business inventory. You pick the business!! The type of business is up to you.
+
+The Menu commands must include: 
+    A....Add a new inventory 
+    D....Delete an item from inventory 
+    P....Display all inventory records (on the screen/monitor) 
+    S....Create a current inventory report (save it to a file)
+    C....Clear all records 
+    Q...Quit 
+    I….Function to total quantities and $ values
+
+You must have 2 additional menu options that you choose.   They must be menu options that allow the inventory to be modified. i.e. add inventory quantities, change price/cost, change dates, etc. 
+
+•   You will use structs and an array to organize the data in the program. Your struct must contain at least the following kinds of information:
+o    Minimum of 2 strings
+•    Suggestions include: item name, date purchased, date sold, manufacturer, etc
+o    Minimum of 2 integers
+•    Suggestions include: quantity in stock, quantity sold, product age, product code
+o    Minimum of 2 decimal values
+•    Suggestions include: cost, price, profit, average inventory:
+•    When you add new inventory the program will ask the user for each of these fields on a separate line.
+•    When you delete an item from inventory the program will ask you for one of the string values and one of the integer items to be deleted, locate the entry in the array and remove all of the data for that entry.
+•    When you display the records on the screen, all of the information stored for each entry will be labeled and displayed. You will not display entries that have no item information. 
+•    Creating a current inventory report copies the current entries in the array to an output file. This must include labeling all of the information so that it is clear what information is being provided. 
+•    Clearing the records deletes all of the information in the array. 
+
+Instructions:
+•	Your program should be called whatever.c (no caps) 
+•	You should use at least 10 user-defined functions (not including main) to appropriately break the problem up into smaller pieces.
+•	Your program must start up with 5 valid records. These records must be “hard coded” in your program file. (This can be one of your user-defined functions) 
+•	You must use function prototypes and can't use ANY global variables regardless of what the “tutor” suggests. 
+•	You need to use a #define to set the upper bound of the inventory to 20 entries. 
+•	Your code should be well designed, well commented and written with good style.
+•	You will submit a printed “readme” page with general instructions on your program, an outline of the data fields (what information they are to contain) and the format needed to enter the data in printed form with your hard copy of your source code.
+
+Other Important Hints and Reminders:
+•     Start work on this as soon as possible.
+•     You are expected to receive as much help as you need for the basic assignment.
+•     It is your responsibility to request this help in the form of specific questions.
+•     You may ask these questions during office hours or by sending them via email.
+•     When you ask a question, it should be specific, and you should provide me with the current version of your program.
+•     The current version of your program should be neatly formatted and commented. It should also be properly indented and use meaningful variable and function names. This will make it easier for anyone helping you to understand what you are trying to do.
+
+NOTE: there will be no guarantee of assistance with this assignment after office hours on the day before it’s due, so DON’T leave this assignment to the last minute.
