@@ -1,0 +1,187 @@
+Assignment 2 Instructions
+
+Create a computer application to maintain the product inventory of a
+T-shirt distributor using a database.  Each record will contain a
+T-shirt name, a price, and the quantity on hand.  The inventory can
+manage a maximum of 30 different shirts.  The database you implement
+should allow a user to add product information, delete product
+information, and update the product's price and quantity, if necessary.  
+In addition, the application should be able to perform the following
+tasks:  1) display a product  record and all its associated fields, 2)
+print a report showing all the product names, prices and quantity on
+hand, for each T-shirt record stored in the database.   The original
+database records are stored in a file called "TeeShirt_Records.txt."
+The application should read the records from the "TeeShirt_Records.txt"
+file and store them in the database.  Call the database "TINV."  When
+a user is finished using the application, the database records should be
+written back to a new file called "TeeShirt_Records_New.txt" using an
+"ofstream" object. 
+
+Call the driver for the application "TeesForHaiti.cpp" and call the
+class that implements the database inventory program  "TINV".  Read
+the tee shirt records using a "ifstream" from the  file called
+"TeeShirt_Records.txt"  and store them into an array of user defined
+structures of type "tee_record" called "Tee_DB".  Let the maximum size
+of  tee_DB be 30. Again, call the class "TINV".   Remember, to
+put the class declaration in the file called "tinv.h" ̂ and the
+implementation in the file called "tinv.cpp".  Remember, "̀TeesForHaiti.cp"î will be
+your driver program.
+
+You may consider the executable skeleton below when implementing the class "TINV":
+Be sure to design and document your program well.  Always using good style.
+Submit the source code for the files TeesForHaiti.cpp, tinv.h, and tinv.cpp electronically 
+through blackboard in the Assignments area before the due date and due time.  
+
+ 
+
+/************************Implement the functions here**********************************************
+ You provide the code for your functions here.
+ Remember to include a program header, with the description of the program,  
+ function pre-conditions and post-conditions, and a brief description about each function.
+***************************************************************************************************/
+
+#include <string>
+#include <iostream>
+#include <fstream>
+
+using namespace std;
+
+/***************************************************************************/
+//Skeleton for tinv.h
+
+#ifndef TINV
+
+#define TINV
+const int SIZE = 30;
+
+class tee_record
+{
+    public:
+        string tee_name;
+        double price;
+        int quantity;
+
+};
+
+class TINV
+{
+    public:
+       // TINV();// default constructor that :reads the data file, initializes variables, and stores data in
+                                //database
+        //void Print_record( formal parameters); //prints a tee_record to the screen, all information
+        //void Insert(formal parameters); //adds a tee_record to the database
+      //  void Remove(formal parameters); //removes a tee_record from the database
+
+       // void Update_record(formal parameters); //updates a tee's price and or quantity on hand field
+      //  int Search(formal parameters); //searches the database for a specific tee_name
+      //  void Close_DB(); //writes the database to a data file called “TeeShirt_Records_New.txt”
+       // bool Is_Full() ; //determines if the database is full
+      //  bool Is_Empty(); //determines if the database is empty
+       
+
+    private:
+      //  int count;
+     //   tee_record TINV[SIZE];
+};
+
+#endif
+
+/*************************************************************************************/
+
+//Skeleton  for tinv.cpp
+TINV::TINV()
+{
+//hint: read datafile into database
+//hint: while loop
+//hint: count++
+//you finish
+}
+
+void TINV::Insert(formal parameters)
+
+{
+
+}
+
+void TINV::Remove(formal parameters)
+
+{
+
+}
+
+
+void TINV::Update_record(formal parameters)
+{
+//you finish
+}
+
+
+int TINV::Search(formal parameters)
+{
+//you finish
+    return count;
+}
+void TINV::Close_DB()
+{
+//hint: ofstream output;
+//hint: output.open("TeeShirt_Records_New.txt");---opens file for output
+//hint: output.close();
+//you finish
+}
+
+
+bool TINV::Is_Full()
+{
+    return (count ==SIZE);
+}
+
+
+bool TINV::Is_Empty()
+{
+    return (count==0);
+} 
+
+/*************************************************************************************/
+
+//Driver for TeeForHaiti.cpp
+
+int main()
+{
+  //declare class object here
+
+    return 0;
+}
+
+/*************************************************************************************/
+
+
+Following is some sample test data  (TeeShirt_Records.txt) you may use to test your class.  
+Here is the order of the columns:  tee_name, price, and quantity on hand.
+
+Red  	100.01	  20
+White	85.56	  20
+Blue	32.45	  100
+Gold	87.92	  30
+Green	55.88	  10
+Yellow	55.88	  10
+Black	125.36	  4
+Purple	258.97	  50
+Brown	32.88	  5
+Tan	15.88	  10
+Striped	12.25	  10
+Orange	34.67	  10
+Cream	388.85	  5
+Maroon	122.98	  10
+Flat	144.12	  10
+Pink	150.55	  10
+Wine	197.86	  10
+Mink	176.89	  1
+Mix	390.25	  10
+Mink	468.99	  0
+Leather 200.99	  0
+Clear	99.99	  10
+Blank	55.99	  10
+Plastic	55.99	  10
+Skin	55.99	  5
+Butter	55.99	  2
+	

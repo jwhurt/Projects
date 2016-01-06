@@ -1,0 +1,33 @@
+Project Description
+This project was a programming assignment from Florida Atlantic University.
+
+Course Number: COT3002, Foundations of Computer Science
+
+Files in this directory
+
+      Tinv.cpp			Implementation file for the TINV ADT class, which implements the tee shirt database functionality
+      Tinv.h			Header file; interface for the class TINV
+      TeesForHaiti.cpp		Driver file for TINV
+      safeio.cpp		Functions to improve reliability of file and user I/O
+      safeio.h			Header file for safeio functions
+      TeeShirt_Records.txt	Data file containing tee shirt records, used to construct database 
+      Assignment2.txt		Description of programming assignment from professor
+      makefile			makes executable a.out
+      README		
+
+Installation
+Copy the directory from github to your local machine
+
+Running from Terminal
+  1. Navigate to the project directory
+
+        $ cd <project directory name>     	      
+     	      
+  2. Create executable a.out and object files using make
+
+        $ make  	     	 		 	
+
+  3.  Execute the program
+
+        $ ./a.out
+
