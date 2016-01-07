@@ -1,8 +1,6 @@
 /*********************************************
-Name:  Joe Hurt					UserID:  jhurt1
-ClassID:  COT3002				Instructor:  Dr. Bullard
-Assignment 2: TeesForHaiti.cpp	Classtime:  3:30 T/R
-Due Date:  3/17/10 at 10:30pm	Today's Date:  3/17/10
+ClassID:  COT3002	       
+Assignment 2: TeesForHaiti.cpp	
 
 Description:  This program simulates a Tee shirt inventory system. The program performs the following steps:
  1.  Pulls data from an external file into the Tee shirt inventory management system.

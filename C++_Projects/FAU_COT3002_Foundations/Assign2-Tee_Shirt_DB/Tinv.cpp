@@ -1,13 +1,4 @@
-/*********************************************
-Course: FAU COT3002, Foundations of Computer Science
-Assignment 2: TeesForHaiti.cpp 
-
-Description:  This program simulates a Tee shirt inventory system. The program performs the following steps:
- 1.  Pulls data from an external file into the Tee shirt inventory management system.
- 2.  Prompts the user to select an option from a menu.
- 3.  Based on the user's selection, the program performs actions on the inventory.
- 4.  Upon exiting the system, the program writes an updated inventory report to an external file.
-*********************************************/
+/*Tinv.cpp:  Implementation file for class TINV, tee shirt inventory system*/
 
 /*Preprocessor directives*/
 #include <iostream>	//std io library
@@ -204,18 +195,18 @@ void TINV::print(int i)
  */
 void TINV::output_Report()	
 {	
-  ofstream fout;		//declare output stream
-  fout.open("TeeShirt_Records_New.txt");	//open output file, connect to output object
-  if(fout.fail())
-    {
-      cout << "Output file open failed.\n";
-      exit(1);
-    }
-  for(int i=0;i<count;i++){	//loop to print entire contents of array 
-    fout<<Tee_DB[i].tee_name<<" "<<Tee_DB[i].price<<" "<<Tee_DB[i].quantity<<endl;
-  }
-  fout.close();
-  return;
+	ofstream fout;		//declare output stream
+	fout.open("TeeShirt_Records_New.txt");	//open output file, connect to output object
+	if(fout.fail())
+	{
+	cout << "Output file open failed.\n";
+	exit(1);
+	}
+	for(int i=0;i<count;i++){	//loop to print entire contents of array 
+	  fout<<Tee_DB[i].tee_name<<" "<<Tee_DB[i].price<<" "<<Tee_DB[i].quantity<<endl;
+	}
+	fout.close();
+	return;
 }
 
 /*function that allows user to edit a record
@@ -235,17 +226,17 @@ void TINV::edit_Record()
     cout << "1. Tee Name\n";
     cout << "2. Price\n";
     cout << "3. Quantity in Stock\n";
-    fieldnum=getInteger("enter field>");
+    fieldnum=getInteger("Enter field>");
     if(fieldnum>3||fieldnum<1)	//range check
       cout << "Invalid field number.";
     else if(fieldnum==1){		//allows user to change name
-	cout << "Enter new Teeshirt name\n";
+	cout << "Enter new Teeshirt name>";
 	getline(cin,Tee_DB[index].tee_name);
     }
     else if(fieldnum==2)	//lets user change price      
-      Tee_DB[index].price=getDouble("Enter new Teeshirt price");
+      Tee_DB[index].price=getDouble("Enter new Teeshirt price>");
     else
-      Tee_DB[index].quantity=getInteger("Enter new inventory quantity");
+      Tee_DB[index].quantity=getInteger("Enter new inventory quantity>");
      cout << "Record updated.\n";
   }
 }

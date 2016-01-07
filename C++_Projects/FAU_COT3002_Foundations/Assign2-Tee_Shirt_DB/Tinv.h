@@ -1,12 +1,4 @@
-/*********************************************
-Course: FAU COT3002, Foundations of Computer Science
-Assignment 2: TeesForHaiti.cpp 
-Description:  This is a header file for Tinv.cpp, the program that simulates a Tee shirt inventory system. The program performs the following steps:
- 1.  Pulls data from an external file into the Tee shirt inventory management system.
- 2.  Prompts the user to select an option from a menu.
- 3.  Based on the user's selection, the program performs actions on the inventory.
- 4.  Upon exiting the system, the program writes an updated inventory report to an external file.
-*********************************************/
+/*Tinv.h: Header file for Tinv.cpp */
 
 #include <string.h>
 using namespace std;
