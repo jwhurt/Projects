@@ -1,0 +1,32 @@
+Project Description
+This project was a programming assignment from Florida Atlantic University.
+
+Course Number: COT3002, Foundations of Computer Science
+
+Files in this directory
+
+      assignment3.txt		Description of programming assignment from professor	
+      madlib_dictionary.txt	Text file containing pairs of words that serve as key:value pairs for game
+      madlib_story.txt		Text file for original story to be modified by exchanging bracketed words with dictionary words
+      madlib_output.txt		Blank file for story output
+      input			contains filenames for game
+      madlibs.cpp		project source code
+      makefile			makes executable file 'madlibs'
+      README		
+
+Installation
+Copy the directory from github to your local machine
+
+Running from Terminal
+  1. Navigate to the project directory
+
+        $ cd <project directory name>     	      
+     	      
+  2. Create executable 'madlibs' using make
+
+        $ make  	     	 		 	
+
+  3.  Execute the program using I/O redirection
+
+        $ ./madlibs<input
+

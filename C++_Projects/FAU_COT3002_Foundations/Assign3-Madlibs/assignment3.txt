@@ -1,0 +1,47 @@
+Program #3, Madlibs
+NO LATE ASSIGNMENTS WILL BE ACCEPTED.
+ALL ASSIGNMENTS MUST BE SUBMITTED ELECTRONICALLY THROUGH THE BLACKBOARD ASSIGNMENTS AREA.  ANY ASSIGNMENTS SUBMITTED ANY OTHER WAY WILL NOT BE GRADED.
+PLEASE START YOUR ASSIGNMENT EARLY!
+ 
+Write a program based on the word game Madlibs.  The input to Madlibs is a brief story, with words left out.  Players are asked to fill in missing words by prompting for adjectives , nouns, verbs, and so on.  When these words are used to replace the missing words, the resulting story is often funny when read aloud.  
+In the computerized version of the game, the input will be a text file (called madlib_story.txt) with certain words annotated by enclosing the words in brackets.  These enclosed words  (i.e., the square bracketed terms, like "[noun]") will be replaced by scanning a dictionary file (madlib_dictionary.txt) for the appropriate word, and placed in an output file (madlib_output.txt) that contains all the unbracketed words in their original positions and the replacement words in the same positions as their corresponding bracketed words' locations.  An output line (sentence) should be no more than 60 characters long.   You must placed the maximum number of characters on a line. You may read your dictionary entries into a vector, and then use it to determine if a bracketed word is a valid dictionary entry (hint: search the dictionary (vector)).  Your program will simultaneously handle two input files (madlib_story.txt and madlib_dictionary.txt)  and one output file (madlib_output.txt).  You should handle both input files with the ifstream class, we discussed in class, and the output file with the standard ofstream class.  Code your program in a single file called madlibs.cpp.  Keep the size of your main function to a minimum. 
+
+The Dictionary File
+The dictionary file will consist of pairs of words (in the madlib_dictionary.txt each pair appears on a separate line).   For example, a portion of the dictionary file might be: 
+noun cat 
+adjective  happy 
+car-brand  mazda 
+The first word of each pair is the key, and the second is the value.  Together, a pair is called an entry.   The only entries in your dictionary are the ones specified by the sample dictionary  file.  Also make sure you check to see that a bracketed word is a valid dictionary entry.  Otherwise you will exhaust you dictionary file on an invalid entry.  Example:  You should not search your dictionary  for a bracketed word like [xxxxx].  [xxxxx] will be printed to your story file. 
+
+The Story File
+This file will consist of text, where some words have a left and right bracket as their first and last characters respectively, e.g.: "[noun]", "[car-brand]".  The words in brackets may be followed by a single punctuation mark like a comma, period, or question mark.  See the madlib_story.txt for an example. 
+
+The Output File
+Your program should scan through the story file, outputting non bracketed words directly to the output file.  For each each "VALID" bracketed word, continue scanning through the dictionary file until reaching an entry with a matching key and send the corresponding value to the output file in place of the "VALID" bracketed word.  Thus, the output file should be a copy of the story file, but with the "VALID" bracketed words replaced with terms from the dictionary file.
+Note that using the ifstream object, you will not be able to tell how long the lines of input are.  Lines in the output file should be no more than 60 characters long.
+Running your program on the dictionary above and the story file: 
+I once owned a [noun] who was [adjective] 
+only when in a [car-brand] automobile. 
+Should result in an output file (though the line break positions may differ): 
+I once owned a cat who was happy only when in a mazda automobile. 
+
+Boundary Conditions
+1.	 The next entry in the dictionary may not correspond to the next bracketed word in the story.  Your program should skip over dictionary entries until it gets to the next one that matches. 
+2.	 If the dictionary is exhausted (end-of-file) before the last bracketed word in the story is replaced, your program should merely output the remaining bracketed words as is.  An example is shown in the madlib_output.txt 
+3.	 A bracketed word is strictly defined as one whose first character is a '[' and whose last character is a ']', with no whitespace between.  It may be followed by a single punctuation mark.  If a word ends with two brackets, treat the second one as the boundary, not as punctuation.  To tell whether a character is a punctuation mark, use the function ispunct(ch) defined in ctype.h. 
+Any deviation from these conditions will be penalized.
+The madlib_output.txt shows what might result from running your program on the madlib_story.txt and  madlib_dictionary.txt files. 
+
+User Interface
+Your program should require exactly three words of input from the user to run correctly.  When I test your project I will use I/O redirection to provide that input to your program.  To that end, assuming your executable is named madlibs it should execute using the following commands:
+•    In Unix:  madlibs < input
+•    In Windows:  madlibs.exe << input
+ 
+where input is a file consisting of exactly three words, the name of the story file, the name of the dictionary file, and the name of the output file, in that order. For example, the contents of input might be: 
+madlib_story.txt madlib_dictionary.txt madlib_output 
+
+Submitting in your project
+You are to submit your code file for the program, madlibs.cpp, using blackboard.  
+
+Hints
+You should use two  ifstream objects, one to read across the story and the other to read across dictionary, and you will use an ofstream object to create the output file. 
