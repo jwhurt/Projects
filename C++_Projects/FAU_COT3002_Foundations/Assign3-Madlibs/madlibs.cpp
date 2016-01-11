@@ -46,6 +46,7 @@ int main()
   return 0;
 }
 
+
 /*fileOpen:  opens the necessary files for playing the game.  
  *precondition: The files for the game have been created and are in the current directory; the files consist of an 
  *original story file and a dictionary file with key-value pairs. Stream objects for handling files have been constructed;
@@ -112,6 +113,8 @@ void  initDictionary(ifstream &infile,vector<string>&dictionary)
     }
   }
 }
+
+
 /*writeNewStory: driver function that calls helper functions to write new story.  Extracts one line at
  *a time from original story; calls function to replace the bracketed words in that line, then calls a
  *function to write that completed line to the output file.
@@ -129,6 +132,7 @@ void writeNewStory(vector<string>&dictionary,int &dictIndex, ifstream &infile, o
     writeLine(outfile,line,charCount);  //call function to write that line to output
   }
 }
+
 
 /*replaceBracketedWords: main workhorse function of the game; processes one line at a time from original story; 
  *reads each line char by char, looking to form a bracketed word.  The scanning process has 3 states, depending
@@ -225,6 +229,7 @@ void writeLine(ofstream &outfile,string &line,int &charCount)
   }
 }
 
+
 /*getWord: searches dictionary for replacement word
  *precondition: dictionary is reference to the dictionary vector containing sequence of key-value pairs,
  *where the key index is an even number and the value index is odd; dictIndex is reference to index in dictionary;
@@ -247,6 +252,7 @@ string getWord(vector<string> &dictionary,int &dictIndex,string bracketedKey)
   }
   return bracketedKey;
 }
+
   
 /*isDictionaryEntry: determines if a given key is valid.  In order to be valid the key must be contained in the 
  *list of keys in the dictionary.  
