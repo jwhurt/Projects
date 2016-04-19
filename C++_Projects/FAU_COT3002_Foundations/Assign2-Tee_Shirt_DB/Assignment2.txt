@@ -23,9 +23,9 @@ the tee shirt records using a "ifstream" from the  file called
 "TeeShirt_Records.txt"  and store them into an array of user defined
 structures of type "tee_record" called "Tee_DB".  Let the maximum size
 of  tee_DB be 30. Again, call the class "TINV".   Remember, to
-put the class declaration in the file called "tinv.h" ̂ and the
-implementation in the file called "tinv.cpp".  Remember, "̀TeesForHaiti.cp"î will be
-your driver program.
+put the class declaration in the file called "tinv.h" and the
+implementation in the file called "tinv.cpp". Remember, "TeesForHaiti.cpp" 
+will be your driver program.
 
 You may consider the executable skeleton below when implementing the class "TINV":
 Be sure to design and document your program well.  Always using good style.
