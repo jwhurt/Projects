@@ -1,0 +1,34 @@
+Project Description
+Assignment 6 from Stanford's CS106B Programming Abstractions, Winter 2015, Eric Roberts
+
+Files included in Assignment6-Basic_Interpreter/
+
+      Assignment6-Instructions.pdf	Requirements for programming assignment from professor
+      src				Source files
+      res				Directory that is part of Assignment package, nothing important here
+      lib				Directory containing the Stanford c++ library
+      Assignment6.pro			QtCreator file
+      README				This document
+
+Files in the director src/
+      Basic.cpp				Implementation of the main program for the BASIC interpreter
+      evalstate.h			Interface file for class EvalState, which contains map that keeps track of variable values
+      evalstate.cpp			Implementation of EvalState class
+      exp.h				Interface for Expression class, which defines class hierarchy for arithmetic expressions
+      exp.cpp				Implementation of Expression class
+      parser.h				Interface for the expression parser
+      parser.cpp			Implementation for parser
+      program.h				Interface for Program class, which stores BASIC statements
+      program.cpp			Implementation for Program class
+      statement.h			Interface for the Statement class, which defines a class hierarchy for the BASIC statement types
+      statement.cpp			Implementation for the Statement class
+
+
+Installing and Running the Program
+
+Copy the assignment directory from github to your local machine
+Install QtCreator if necessary
+Start QtCreator
+From the File menu, select "Open File or Project..."
+Navigate to the assignment directory, open the .pro file
+Execute the program from QtCreator
