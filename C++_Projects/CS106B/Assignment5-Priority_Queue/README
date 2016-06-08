@@ -1,0 +1,35 @@
+Project Description
+Assignment 5 from Stanford's CS106B Programming Abstractions, Winter 2015, Eric Roberts
+
+Summary: In this assignment, you will have the chance to implement a collection class called a priority queue, 
+	 which stores its elements in an order determined by a numeric priority value. 
+
+Directory Contents of Assignment5-Priority_Queue/
+	  File  	     	    	Description	
+
+      	  Assignment5-Instructions.pdf	Requirements for the programming assignment
+	  1-PQTestUsingArray		Directory for Part 1 of project; uses array implementation
+	  2-PQTestUsingList		Directory for Part 2; uses linked list implementation
+	  3-PQTestUsingHeap		Directory for Part 3; uses array based heap to simulate priority tree
+      	  README			This document 
+
+Files included in each directory above
+      	 src				Source files
+      	 res				Directory that is part of Assignment package, nothing important here
+      	 lib				Directory containing the Stanford c++ library
+      	 Assignment5.pro		QtCreator file
+
+
+Files in directory src/ 
+      	 PQTest.cpp			Driver program containing main() which runs the test of functions exported by pqueue.h
+ 	 pqueue.h			Interface file for the PriorityQueue class, a collection in which values a processed in priority order
+	 pqueue.cpp			Implementation of PriorityQueue class
+
+Installing and Running the Program
+
+Copy the assignment directory from github to your local machine
+Install QtCreator if necessary
+Start QtCreator
+From the File menu, select "Open File or Project..."
+Navigate to the assignment directory, open the .pro file
+Execute the program from QtCreator
